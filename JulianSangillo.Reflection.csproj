@@ -15,13 +15,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations" Version="2022.3.1"/>
+        <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="images/*" Pack="true" PackagePath="images"/>
-        <None Include="LICENSE" Pack="true" PackagePath=""/>
-        <None Include="README.md" Pack="true" PackagePath=""/>
+        <None Include="images/*" Pack="true" PackagePath="images" />
+        <None Include="LICENSE" Pack="true" PackagePath="" />
+        <None Include="README.md" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>
