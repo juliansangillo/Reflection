@@ -9,9 +9,9 @@ namespace JulianSangillo.Reflection {
     /// </summary>
     [PublicAPI]
     public interface IAssemblyCollection : IEnumerable<Assembly> {
-        /// <returns>
-        ///     Instance of <see cref="ITypeCollection" /> containing all types in all referenced assemblies
-        /// </returns>
+        /// <summary>
+        ///     Gets instance of <see cref="ITypeCollection" /> containing all types in all referenced assemblies.
+        /// </summary>
         ITypeCollection Types { get; }
     }
 }

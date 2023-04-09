@@ -10,17 +10,17 @@ namespace JulianSangillo.Reflection {
     public class TypeCollection : ITypeCollection {
         private readonly IEnumerable<Type> types;
 
-        /// <summary>Initializes a new instance of <see cref="TypeCollection" /> from an enumerable of types.</summary>
-        /// <param name="types">The types to initialize the collection with</param>
+        /// <summary>Initializes a new instance of the <see cref="TypeCollection"/> class from an enumerable of types.</summary>
+        /// <param name="types">The types to initialize the collection with.</param>
         public TypeCollection(IEnumerable<Type> types) {
             this.types = types;
         }
 
         /// <summary>
-        ///     Initializes a new instance of <see cref="TypeCollection" /> that uses reflection to collect all types
-        ///     in all given assemblies.
+        ///     Initializes a new instance of the <see cref="TypeCollection"/> class that uses reflection to collect
+        ///     all types in all given assemblies.
         /// </summary>
-        /// <param name="assemblies">The assemblies to collect types from</param>
+        /// <param name="assemblies">The assemblies to collect types from.</param>
         protected internal TypeCollection(IAssemblyCollection assemblies) {
             types = assemblies.SelectMany(assembly => assembly.GetTypes());
         }
@@ -39,7 +39,8 @@ namespace JulianSangillo.Reflection {
         }
 
         /// <inheritdoc />
-        public ITypeCollection AssignableTo<T>(bool interfaces = false, bool abstracts = false) where T : class {
+        public ITypeCollection AssignableTo<T>(bool interfaces = false, bool abstracts = false)
+            where T : class {
             return AssignableTo(typeof(T));
         }
 
@@ -57,8 +58,7 @@ namespace JulianSangillo.Reflection {
             return types.Where(t =>
                     (interfaces || !t.IsInterface) &&
                     (abstracts || !t.IsAbstract) &&
-                    t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == type)
-                )
+                    t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == type))
                 .ToTypeCollection();
         }
 
@@ -73,18 +73,17 @@ namespace JulianSangillo.Reflection {
             Type type,
             bool inherit = true,
             bool interfaces = false,
-            bool abstracts = false
-        ) {
+            bool abstracts = false) {
             return types.Where(t =>
                     (interfaces || !t.IsInterface) &&
                     (abstracts || !t.IsAbstract) &&
-                    t.GetCustomAttributes(type, inherit).Length > 0
-                )
+                    t.GetCustomAttributes(type, inherit).Length > 0)
                 .ToTypeCollection();
         }
 
         /// <inheritdoc />
-        public IEnumerable<T> InstanceOf<T>() where T : class {
+        public IEnumerable<T> InstanceOf<T>()
+            where T : class {
             return AssignableTo<T>().Select(t => Activator.CreateInstance(t) as T);
         }
 

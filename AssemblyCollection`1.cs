@@ -14,17 +14,17 @@ namespace JulianSangillo.Reflection {
     public class AssemblyCollection<TEntryPoint> : IAssemblyCollection {
         private readonly IEnumerable<Assembly> enumerable;
 
-        /// <inheritdoc />
-        public ITypeCollection Types { get; }
-
         /// <summary>
-        ///     Initializes a new instance of <see cref="T:JulianSangillo.Reflection.AssemblyCollection`1" />. Uses
+        ///     Initializes a new instance of the <see cref="AssemblyCollection{TEntryPoint}"/> class. Uses
         ///     reflection to collect all assemblies starting from the entry-point and initializes.
         /// </summary>
         public AssemblyCollection() {
             enumerable = GetAllAssemblies();
             Types = new TypeCollection(this);
         }
+
+        /// <inheritdoc />
+        public ITypeCollection Types { get; }
 
         /// <summary>
         ///     Returns an enumerator that iterates through the collection.
