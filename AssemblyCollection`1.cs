@@ -15,7 +15,7 @@ namespace JulianSangillo.Reflection {
         private readonly IEnumerable<Assembly> enumerable;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="AssemblyCollection{TEntryPoint}"/> class. Uses
+        ///     Initializes a new instance of the <see cref="AssemblyCollection{TEntryPoint}" /> class. Uses
         ///     reflection to collect all assemblies starting from the entry-point and initializes.
         /// </summary>
         public AssemblyCollection() {
@@ -30,21 +30,17 @@ namespace JulianSangillo.Reflection {
         ///     Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>An enumerator that can be used to iterate through the collection.</returns>
-        public IEnumerator<Assembly> GetEnumerator() {
-            return enumerable.GetEnumerator();
-        }
+        public IEnumerator<Assembly> GetEnumerator() => enumerable.GetEnumerator();
 
         /// <summary>
         ///     Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>An enumerator that can be used to iterate through the collection.</returns>
-        IEnumerator IEnumerable.GetEnumerator() {
-            return GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         private static IEnumerable<Assembly> GetAllAssemblies() {
             ISet<string> assemblySet = new HashSet<string>();
-            Queue<Assembly> next = new Queue<Assembly>();
+            var next = new Queue<Assembly>();
 
             next.Enqueue(Assembly.GetAssembly(typeof(TEntryPoint)));
 

@@ -1,61 +1,63 @@
 {
-  "$schema" : "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
-  "settings" : {
-    "indentation" : {
-      "indentationSize" : 4,
-      "tabSize" : 4,
-      "useTabs" : false
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "indentation": {
+      "indentationSize": 4,
+      "tabSize": 4,
+      "useTabs": false
     },
-    "spacingRules" : {
+    "spacingRules": {
     },
-    "readabilityRules" : {
-      "allowBuiltInTypeAliases" : true
+    "readabilityRules": {
+      "allowBuiltInTypeAliases": true
     },
-    "orderingRules" : {
-      "elementOrder" : [
+    "orderingRules": {
+      "elementOrder": [
         "kind",
         "constant",
         "accessibility",
         "static",
         "readonly"
       ],
-      "systemUsingDirectivesFirst" : true,
-      "usingDirectivesPlacement" : "outsideNamespace",
-      "blankLinesBetweenUsingGroups" : "allow"
+      "systemUsingDirectivesFirst": true,
+      "usingDirectivesPlacement": "outsideNamespace",
+      "blankLinesBetweenUsingGroups": "allow"
     },
-    "namingRules" : {
-      "allowCommonHungarianPrefixes" : false,
-      "allowedHungarianPrefixes" : [ ],
-      "allowedNamespaceComponents" : [ ],
+    "namingRules": {
+      "allowCommonHungarianPrefixes": false,
+      "allowedHungarianPrefixes": [],
+      "allowedNamespaceComponents": [],
       "includeInferredTupleElementNames": false,
-      "tupleElementNameCasing" : "PascalCase"
+      "tupleElementNameCasing": "PascalCase"
     },
-    "maintainabilityRules" : {
-      "topLevelTypes" : [
+    "maintainabilityRules": {
+      "topLevelTypes": [
         "class",
         "interface",
         "struct"
       ]
     },
-    "layoutRules" : {
-      "newlineAtEndOfFile" : "require",
-      "allowConsecutiveUsings" : true,
-      "allowDoWhileOnClosingBrace" : true
+    "layoutRules": {
+      "newlineAtEndOfFile": "require",
+      "allowConsecutiveUsings": true,
+      "allowDoWhileOnClosingBrace": true
     },
-    "documentationRules" : {
+    "documentationRules": {
       "companyName": "",
-      "copyrightText" : "",
-      "xmlHeader" : true,
-      "variables": { },
+      "copyrightText": "",
+      "xmlHeader": true,
+      "variables": {},
       "headerDecoration": "",
-      "documentInterfaces" : true,
-      "documentExposedElements" : true,
-      "documentInternalElements" : false,
-      "documentPrivateElements" : false,
-      "documentPrivateFields" : false,
-      "documentationCulture" : "en-US",
-      "fileNamingConvention" : "metadata",
-      "excludeFromPunctuationCheck": [ "seealso" ]
+      "documentInterfaces": true,
+      "documentExposedElements": true,
+      "documentInternalElements": false,
+      "documentPrivateElements": false,
+      "documentPrivateFields": false,
+      "documentationCulture": "en-US",
+      "fileNamingConvention": "metadata",
+      "excludeFromPunctuationCheck": [
+        "seealso"
+      ]
     }
   }
 }

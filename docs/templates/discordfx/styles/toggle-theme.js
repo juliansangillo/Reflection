@@ -8,43 +8,42 @@ const lightCode = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/st
 let sw = document.getElementById('switch-dark');
 
 function setColors(currentColors) {
-    const path = colorsTheme.getAttribute('href').split('/');
-    colorsTheme.setAttribute('href', path.slice(0, path.length - 1).concat(currentColors).join('/'));
+  const path = colorsTheme.getAttribute('href').split('/');
+  colorsTheme.setAttribute('href', path.slice(0, path.length - 1).concat(currentColors).join('/'));
 }
 
 function setCode(currentCode) {
-    codeTheme.setAttribute('href', currentCode);
+  codeTheme.setAttribute('href', currentCode);
 }
 
 function toggleTheme(dark) {
-    let currentColors = darkColors;
-    let currentCode = darkCode;
-    if (!dark) {
-        currentColors = lightColors;
-        currentCode = lightCode;
-    }
+  let currentColors = darkColors;
+  let currentCode = darkCode;
+  if (!dark) {
+    currentColors = lightColors;
+    currentCode = lightCode;
+  }
 
-    setColors(currentColors);
-    setCode(currentCode);
+  setColors(currentColors);
+  setCode(currentCode);
 }
 
 function onChange() {
-    toggleTheme(this.checked);
-    if (this.checked)
-        localStorage.setItem("theme", "dark");
-    else 
-        localStorage.setItem("theme", "light");
+  toggleTheme(this.checked);
+  if (this.checked)
+    localStorage.setItem("theme", "dark");
+  else
+    localStorage.setItem("theme", "light");
 }
 
 if (window.localStorage) {
-    if(localStorage.getItem("theme") === "light") {
-       sw.remove();
-       sw = document.getElementById('switch-light');
-    }
-    else
-       document.getElementById('switch-light').remove();
+  if (localStorage.getItem("theme") === "light") {
+    sw.remove();
+    sw = document.getElementById('switch-light');
+  } else
+    document.getElementById('switch-light').remove();
 
-    sw.classList.remove("hidden");
+  sw.classList.remove("hidden");
 
-    document.getElementById('theme').addEventListener("change", onChange);
+  document.getElementById('theme').addEventListener("change", onChange);
 }
