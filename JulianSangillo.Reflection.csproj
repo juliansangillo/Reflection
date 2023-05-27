@@ -15,8 +15,25 @@
     <RepositoryUrl>https://github.com/juliansangillo/Reflection</RepositoryUrl>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <DefaultDocumentationLogLevel>Trace</DefaultDocumentationLogLevel>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DefaultDocumentationFileNameFactory>Folder</DefaultDocumentationFileNameFactory>
+    <DefaultDocumentationGeneratedPages>Namespaces,Types</DefaultDocumentationGeneratedPages>
+    <DefaultDocumentationFolder>$(MSBuildProjectDirectory)\docs\api</DefaultDocumentationFolder>
+    <TableOfContentsFolder>$(MSBuildProjectDirectory)\docs</TableOfContentsFolder>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2022.3.1"/>
+    <PackageReference Include="DefaultDocumentation" Version="0.8.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
+    <PackageReference Include="JulianSangillo.GitBookDefaultDocumentationPlugin" Version="0.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="JulianSangillo.StyleAnalyzers" Version="0.2.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,9 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="images/icon.png" Pack="true" PackagePath=""/>
-    <None Include="LICENSE" Pack="true" PackagePath=""/>
-    <None Include="README.md" Pack="true" PackagePath=""/>
+    <None Include="images/icon.png" Pack="true" PackagePath="" />
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
